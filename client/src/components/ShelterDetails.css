@@ -1,0 +1,281 @@
+/* ============================================================
+   ESTRUTURA BASE E MODO ESCURO
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 16px;
+}
+
+.modal-content {
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  width: 100%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 28px;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+}
+
+.info-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-item span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* --- SEÇÃO DE CHECK-IN --- */
+.checkin-form {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.checkin-form h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.checkin-container {
+  display: flex;
+  gap: 10px;
+}
+
+.checkin-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.checkin-input:focus {
+  border-color: var(--primary);
+}
+
+/* BOTÕES */
+.btn-primary-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--primary);
+  color: #ffffff !important;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.btn-primary-modal:hover {
+  filter: brightness(1.1);
+}
+
+.btn-primary-modal:active {
+  transform: scale(0.98);
+}
+
+.btn-contact-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: all 0.2s ease;
+}
+
+.btn-contact-outline:hover {
+  background: var(--primary);
+  color: #fff !important;
+}
+
+.badge-vagas {
+  width: fit-content;
+  background: var(--primary);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+/* ============================================================
+   MODO CLARO
+   ============================================================ */
+[data-theme='light'] .modal-content {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #e0e0e0;
+}
+
+[data-theme='light'] .info-item {
+  background-color: #f8f9fa !important;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 24px;
+    width: 95%;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkin-container {
+    flex-direction: column;
+  }
+
+  .btn-primary-modal {
+    width: 100%;
+  }
+}
+
+/* --- SEÇÃO DE RECURSOS NO MODAL --- */
+.features-details-section {
+  margin-top: 10px;
+}
+
+.features-details-section h4 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.features-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.feature-detail-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform 0.2s;
+}
+
+.feature-detail-icon {
+  color: var(--primary);
+  display: flex;
+}
+
+.feature-detail-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.no-features-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 480px) {
+  .features-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Customização SweetAlert */
+.swal2-popup {
+  border-radius: 20px !important;
+  font-family: inherit !important;
+}
