@@ -1,0 +1,59 @@
+{
+  "info": {
+    "_postman_id": "2af50bdd-f402-4d9e-9778-4059014870ad",
+    "name": "Projeto Apoio - Documentação",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52976194"
+  },
+  "item": [
+    {
+      "name": "New request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/api/shelters",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "shelters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Abrigo Central\",\r\n  \"address\": \"Rua A, 123\",\r\n  \"city\": \"Porto Alegre\",\r\n  \"capacity\": 50,\r\n  \"contact_phone\": \"51999999999\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/shelters",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "shelters"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
