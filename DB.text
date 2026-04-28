@@ -38,3 +38,4 @@ INSERT INTO donation_categories (name) VALUES ('Alimentos'), ('Água'), ('Higien
 
 INSERT INTO shelters (name, address, city, capacity, occupied_slots, contact_phone)
 VALUES ('Abrigo Central Brasília', 'Setor Comercial Sul, Quadra 05', 'Brasília', 50, 10, '61999999999');
+
